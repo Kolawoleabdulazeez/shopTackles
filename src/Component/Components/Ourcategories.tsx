@@ -182,10 +182,10 @@ export default function OurCategories() {
           <h2 className="text-2xl font-semibold tracking-wide text-gray-900 dark:text-white">
             OUR CATEGORIES
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-sm text-gray-500 dark:text-gray-400">
-            Handpicked pieces across men's, women's, kids', and accessories, refreshed
-            every season so there's always something new to find.
-          </p>
+    <p className="mx-auto mt-3 max-w-md text-sm text-gray-500 dark:text-gray-400">
+  Handpicked pieces across men&apos;s, women&apos;s, kids&apos;, and accessories,
+  refreshed every season so there&apos;s always something new to find.
+</p>
         </div>
 
         <div className="mt-6 flex flex-wrap justify-center gap-2">

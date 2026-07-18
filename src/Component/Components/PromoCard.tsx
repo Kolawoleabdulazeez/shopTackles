@@ -1,4 +1,4 @@
-export function PromoCard({
+export default function PromoCard({
   heading,
   subtext,
   bg,

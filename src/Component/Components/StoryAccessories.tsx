@@ -1,4 +1,4 @@
-import { ImageCard } from "./ImageCard";
+import ImageCard  from "./ImageCard";
 
 const featured = [
   {

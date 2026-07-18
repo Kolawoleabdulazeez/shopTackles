@@ -22,9 +22,9 @@ export default function GiftBanner() {
         {/* Left: copy */}
         <div className="text-white md:max-w-xs">
           <p className="text-sm text-orange-50">Discover the perfect picks for every personality.</p>
-          <h2 className="mt-3 text-2xl font-semibold leading-snug md:text-3xl">
-            You've Got The List, We've Got The gifts!
-          </h2>
+                    <h2 className="mt-3 text-2xl font-semibold leading-snug md:text-3xl">
+            You&apos;ve Got the List, We&apos;ve Got the Gifts!
+            </h2>
         </div>
 
         {/* Right: tag grid */}

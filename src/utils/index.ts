@@ -1,4 +1,3 @@
-import { Activity } from "../services/project/project.api";
 
 export const EMAIL_VALIDATION = (value: string) => {
   if (!value) return "Email is required";
@@ -53,47 +52,6 @@ export const formatLabel = (key: string): string => {
     .trim()
 }
 
-
-export const mapActivityDescription = (item: Activity) => {
-
-  switch (item.action) {
-    case "ProjectCreated":
-      return {
-        action: "created project",
-        target: item.entityTitle,
-      };
-
-    case "ProjectUpdated":
-      return {
-        action: "updated project",
-        target: item.entityTitle,
-      };
-
-    case "MemberInvited":
-      return {
-        action: "invited",
-        target: item.metadata?.email || item.entityTitle,
-      };
-
-    case "MemberAdded":
-      return {
-        action: "added",
-        target: `${item.entityTitle} as ${item.metadata?.role || "member"}`,
-      };
-
-    case "MemberRemoved":
-      return {
-        action: "removed",
-        target: item.entityTitle,
-      };
-
-    default:
-      return {
-        action: "performed an action on",
-        target: item.entityTitle || "this project",
-      };
-  }
-};
 
 
 export const trimWithEllipses = (str: string, length?: number) => {

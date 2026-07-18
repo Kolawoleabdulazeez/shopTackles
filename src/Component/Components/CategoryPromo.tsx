@@ -1,5 +1,5 @@
-import { ImageCard } from "./ImageCard";
-import { PromoCard } from "./PromoCard";
+import ImageCard  from "./ImageCard";
+import  PromoCard  from "./PromoCard";
 
 const promos = {
   menFashion: {

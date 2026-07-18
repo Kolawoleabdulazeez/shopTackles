@@ -1,4 +1,3 @@
-import { GroupMessages } from "@/services/chat/chat.api";
 import { useEffect, useState } from "react";
 
 export const PRIORITY_COLORS: Record<string, string> = {
@@ -152,19 +151,6 @@ export const DateDivider = ({ label }: { label: string }) => (
 );
 
 
-export function groupByDate(messages: GroupMessages[]): { date: string; messages: GroupMessages[] }[] {
-  const groups: Record<string, GroupMessages[]> = {};
-  messages.forEach((msg) => {
-    const date = new Date(msg.sentAt).toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    });
-    if (!groups[date]) groups[date] = [];
-    groups[date].push(msg);
-  });
-  return Object.entries(groups).map(([date, messages]) => ({ date, messages }));
-}
 
 
 export type ChatMessageUI = {
@@ -177,15 +163,7 @@ export type ChatMessageUI = {
   isMine: boolean;
 };
 
-export const mapChatMessageToUI = (msg: any): ChatMessageUI => ({
-  id: String(msg.id),
-  content: msg.content,
-  sender: msg.sender?.fullName || "Unknown",
-  senderInitials: getInitials(msg.sender?.fullName || "Unknown"),
-  senderColor: getAvatarColor(msg.sender?.userId || msg.sender?.fullName || "U"),
-  time: formatMessageTime(msg.sentAt),
-  isMine: !!msg.isMine,
-});
+
 
 
 export function AnimatedNumber({ target }: { target: number }) {

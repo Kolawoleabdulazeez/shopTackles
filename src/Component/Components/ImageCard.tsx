@@ -1,4 +1,4 @@
-export function ImageCard({
+export default function ImageCard({
   image,
   overline,
   title,
