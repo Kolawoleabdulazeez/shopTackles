@@ -47,7 +47,7 @@ export default function QuickViewModal({
         <button
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded bg-orange-400 text-white hover:bg-orange-500"
+          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded bg-orange-400 text-white hover:bg-[#F4694C]"
         >
           <X size={16} />
         </button>
@@ -140,7 +140,7 @@ export default function QuickViewModal({
 
               <button
                 onClick={handleAddToCart}
-                className="flex flex-1 items-center justify-center gap-2 rounded bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-600"
+                className="flex flex-1 items-center justify-center gap-2 rounded bg-[#F4694C] px-4 py-2 text-sm font-medium text-white hover:bg-orange-600"
               >
                 <ShoppingCart size={16} /> Add to Cart
               </button>

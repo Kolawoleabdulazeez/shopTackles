@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeProvider } from "next-themes";
 import { pangram } from "@/utils/fonts";
+import PageLoader from "@/Component/Pageloader";
 
 
 
@@ -20,6 +21,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <Provider store={store}>
+                <PageLoader />
+
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem={false}>
           <div className="flex min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-white">
             {!hideNavbar && (

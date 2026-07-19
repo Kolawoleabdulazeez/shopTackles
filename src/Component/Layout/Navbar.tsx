@@ -6,6 +6,9 @@ import { waterfall } from "@/utils/fonts";
 import type { RootState } from "@/store";
 import ShopsMegaMenu from "./ShopMegaMenu";
 import CartDropdown from "./Cartdropdown";
+import LoginPromptDropdown from "./LoginPromptDropdown";
+import ProfileDropdown from "./ProfileDropdown";
+
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -21,13 +24,18 @@ export default function Navbar() {
   const [language, setLanguage] = useState("English");
   const [shopsOpen, setShopsOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const shopsRef = useRef<HTMLDivElement>(null);
   const cartRef = useRef<HTMLDivElement>(null);
+  const profileRef = useRef<HTMLDivElement>(null);
 
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
-  // close either dropdown when clicking outside of it
+  // TODO: replace with real auth state once login is wired up (e.g. an authSlice or session hook)
+  const isAuthenticated = false;
+
+  // close any open dropdown when clicking outside of it
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (shopsRef.current && !shopsRef.current.contains(e.target as Node)) {
@@ -35,6 +43,9 @@ export default function Navbar() {
       }
       if (cartRef.current && !cartRef.current.contains(e.target as Node)) {
         setCartOpen(false);
+      }
+      if (profileRef.current && !profileRef.current.contains(e.target as Node)) {
+        setProfileOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -116,9 +127,23 @@ export default function Navbar() {
           <button aria-label="Search" className="hover:text-orange-500 dark:hover:text-orange-400">
             <Search size={20} />
           </button>
-          <button aria-label="Account" className="hover:text-orange-500 dark:hover:text-orange-400">
-            <User size={20} />
-          </button>
+
+          <div className="relative" ref={profileRef}>
+            <button
+              aria-label="Account"
+              onClick={() => setProfileOpen((open) => !open)}
+              className="hover:text-orange-500 dark:hover:text-orange-400"
+            >
+              <User size={20} />
+            </button>
+
+            {profileOpen &&
+              (isAuthenticated ? (
+                <ProfileDropdown onClose={() => setProfileOpen(false)} />
+              ) : (
+                <LoginPromptDropdown onClose={() => setProfileOpen(false)} />
+              ))}
+          </div>
 
           <div className="relative" ref={cartRef}>
             <button
@@ -128,7 +153,7 @@ export default function Navbar() {
             >
               <ShoppingCart size={20} />
               {cartCount > 0 && (
-                <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[10px] font-medium text-white">
+                <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-[#F4694C] text-[10px] font-medium text-white">
                   {cartCount}
                 </span>
               )}
