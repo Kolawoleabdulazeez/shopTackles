@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import { ChevronLeft } from "lucide-react";
 import Navbar from "@/Component/Layout/Navbar";
 import Breadcrumb from "@/Component/Layout/Breadcrumb";
-import Footer from "@/Component/Components/Footer";
-import Newsletter from "@/Component/Components/Newsletter";
 import OrderSummary from "./Components/Ordersummary";
-import DeliveryMethodSection from "./Components/Deliverymethodsection";
+import Newsletter from "@/Component/Components/Newsletter";
+import Footer from "@/Component/Components/Footer";
 import BillingDetailsForm from "./Components/Billingdetailsform";
+import DeliveryMethodSection from "./Components/Deliverymethodsection";
 import ShippingDetailsSection from "./Components/Shippingdetailssection";
 import PaymentMethodSection from "./Components/Paymentmethodsection";
 

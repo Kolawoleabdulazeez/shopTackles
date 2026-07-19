@@ -1,19 +1,30 @@
+import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/store";
+import Card from "./Card";
 
 const DELIVERY_FEE = 50;
 
 export default function OrderSummary({ onPlaceOrder }: { onPlaceOrder: () => void }) {
+  const router = useRouter();
   const items = useSelector((state: RootState) => state.cart.items);
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const total = items.length > 0 ? subtotal + DELIVERY_FEE : 0;
 
   return (
-    <div className="rounded border border-gray-200 p-5 dark:border-gray-800">
-      <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
-        Your Order ({itemCount} {itemCount === 1 ? "item" : "items"})
-      </h2>
+    <Card>
+      <div className="flex items-center justify-between">
+        <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
+          Your Order ({itemCount} {itemCount === 1 ? "item" : "items"})
+        </h2>
+        <button
+          onClick={() => router.push("/cart")}
+          className="text-xs font-medium text-orange-500 hover:underline"
+        >
+          Modify Cart
+        </button>
+      </div>
 
       <div className="mt-4 space-y-4">
         {items.map((item) => (
@@ -55,6 +66,6 @@ export default function OrderSummary({ onPlaceOrder }: { onPlaceOrder: () => voi
       >
         Place Order
       </button>
-    </div>
+    </Card>
   );
 }

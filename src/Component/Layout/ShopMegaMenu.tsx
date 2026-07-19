@@ -1,40 +1,5 @@
+import { accessories, kidsFashion, menFashion, slugify, topBrands, womenFashion } from "@/utils/data";
 import Link from "next/link";
-
-const menFashion = [
-  "Clothing",
-  "Shoes",
-  "Accessories",
-  "Underwear & Sleepwear",
-  "Traditional & Cultural Wear",
-  "T-Shirts",
-  "Polo Shirts",
-  "Trousers & Chinos",
-  "Sneakers",
-  "Jewelry",
-];
-
-const womenFashion = [
-  "Clothing",
-  "Shoes",
-  "Accessories",
-  "Underwear & Sleepwear",
-  "Handbags & Wallets",
-  "Maternity",
-  "Dresses",
-  "Traditional",
-  "Sneakers",
-  "Beach & Swimwear",
-];
-
-const accessories = ["Men's Watch", "Women's Watch", "Men's Glasses", "Women's Glasses"];
-
-const kidsFashion = ["Boy's Fashion", "Girl's Fashion"];
-
-const topBrands = ["Addidas", "Nike", "Puma", "Fendi", "Louis Vuitton", "Dior", "Gucci", "Citizen"];
-
-function slugify(label: string) {
-  return label.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-}
 
 function MenuColumn({ title, items, basePath }: { title: string; items: string[]; basePath: string }) {
   return (

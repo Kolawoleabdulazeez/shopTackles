@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import type { RootState } from "@/store";
+import Card from "./Card";
 
 function getEstimatedDelivery() {
   const date = new Date();
@@ -11,7 +12,7 @@ export default function ShippingDetailsSection() {
   const items = useSelector((state: RootState) => state.cart.items);
 
   return (
-    <section>
+    <Card>
       <h2 className="text-sm font-semibold text-gray-900 dark:text-white">3. Shipping Details</h2>
 
       <ul className="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
@@ -26,6 +27,6 @@ export default function ShippingDetailsSection() {
         All items will be delivered by{" "}
         <span className="font-semibold text-gray-900 dark:text-white">{getEstimatedDelivery()}</span>
       </p>
-    </section>
+    </Card>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
+import Card from "./Card";
 
 const paymentOptions = [
   { value: "card", label: "Online Card Payment" },
@@ -21,7 +22,7 @@ export default function PaymentMethodSection() {
   };
 
   return (
-    <section>
+    <Card>
       <h2 className="text-sm font-semibold text-gray-900 dark:text-white">4. Payment Method</h2>
       <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
         Where do you want to pay from?
@@ -107,6 +108,6 @@ export default function PaymentMethodSection() {
           </button>
         </div>
       )}
-    </section>
+    </Card>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Card from "./Card";
 
 export default function BillingDetailsForm() {
   const [fullName, setFullName] = useState("");
@@ -8,7 +9,7 @@ export default function BillingDetailsForm() {
   const [address, setAddress] = useState("");
 
   return (
-    <section>
+    <Card>
       <h2 className="text-sm font-semibold text-gray-900 dark:text-white">1. Billing Details</h2>
 
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -48,6 +49,6 @@ export default function BillingDetailsForm() {
           className="rounded border border-gray-300 px-3 py-2 text-sm focus:border-orange-400 focus:outline-none sm:col-span-2 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
         />
       </div>
-    </section>
+    </Card>
   );
 }
