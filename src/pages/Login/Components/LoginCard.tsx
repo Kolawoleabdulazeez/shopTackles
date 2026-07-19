@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { FacebookIcon, GoogleIcon } from "@/pages/Singup/Component/Socialicons";
+import { FacebookIcon, GoogleIcon } from "@/Component/Components/Socialicons";
 
 export default function LoginCard() {
   const [email, setEmail] = useState("");
@@ -81,7 +81,7 @@ export default function LoginCard() {
       </div>
 
       <p className="mt-6 text-center text-xs text-gray-400">
-        Don't have an account yet?{" "}
+        Don&apos;t have an account yet?{" "}
         <Link href="/signup" className="font-medium text-orange-400 hover:underline">
           Register for free
         </Link>
