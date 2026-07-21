@@ -20,7 +20,7 @@ const featuredPost: BlogPost = {
   category: "Style Guide",
   author: "Amara Chukwu",
   date: "15 Jul 2026",
-  image: "/BlogFeatured.svg",
+  image: "/clark-street.jpg",
 };
 
 const posts: BlogPost[] = [
@@ -32,7 +32,7 @@ const posts: BlogPost[] = [
     category: "Trends",
     author: "Jide Okafor",
     date: "10 Jul 2026",
-    image: "/Blog1.svg",
+    image: "/tuananh.jpg",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const posts: BlogPost[] = [
     category: "Sustainability",
     author: "Ronke Adeyemi",
     date: "6 Jul 2026",
-    image: "/Blog2.svg",
+    image: "/hannah-morgan.jpg",
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ const posts: BlogPost[] = [
     category: "Fashion Tips",
     author: "Amara Chukwu",
     date: "29 Jun 2026",
-    image: "/Blog3.svg",
+    image: "/dion-martins.jpg",
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ const posts: BlogPost[] = [
     category: "Behind the Brand",
     author: "ShopTackles Team",
     date: "22 Jun 2026",
-    image: "/Blog4.svg",
+    image: "/OurStory.svg",
   },
   {
     id: 5,
@@ -72,7 +72,7 @@ const posts: BlogPost[] = [
     category: "Fashion Tips",
     author: "Jide Okafor",
     date: "15 Jun 2026",
-    image: "/Blog5.svg",
+    image: "/vadim-sherbakov.jpg",
   },
   {
     id: 6,
@@ -82,7 +82,7 @@ const posts: BlogPost[] = [
     category: "Style Guide",
     author: "Ronke Adeyemi",
     date: "8 Jun 2026",
-    image: "/Blog6.svg",
+    image: "/ryan-plomp.jpg",
   },
 ];
 

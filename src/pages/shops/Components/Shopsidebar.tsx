@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { kidsFashion, menFashion, topBrands, womenFashion, accessories as accessoryItems } from "@/utils/data";
 
@@ -50,6 +50,10 @@ export default function ShopSidebar() {
   const [expandedCategory, setExpandedCategory] = useState("Men's Fashion");
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(500);
+
+  useEffect(()=>{
+    setMinPrice(minPrice)
+  },[])
 
   return (
     <aside className="w-full space-y-6 text-sm">

@@ -8,7 +8,7 @@ export default function FeaturedPost({ post }: { post: BlogPost }) {
       <div className="grid grid-cols-1 md:grid-cols-2">
         <Link href={`/blog/${post.slug}`}>
           <div
-            className="h-64 w-full bg-gray-200 bg-cover bg-center md:h-full"
+            className="h-64 w-full bg-gray-200 bg-cover bg-top md:h-full"
             style={{ backgroundImage: `url(${post.image})` }}
           />
         </Link>
